@@ -22,8 +22,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'users/show'
     assert_not flash.nil?
-
-    #assert_select 'div#error_explanation'
+    assert is_logged_in?
+   # assert_select 'div#error_explanation'
    # assert_select 'div.field_with_errors'
    # assert_select 'form[action="/signup"]'
   end
